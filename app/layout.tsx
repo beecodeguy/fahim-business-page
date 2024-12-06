@@ -7,10 +7,36 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const aeonik = localFont({
+  variable: "--aeonik-font",
+  src: [
+    {
+      path: "./fonts/Aeonik/Aeonik-Bold.otf",
+      weight: "700",
+    },
+    {
+      path: "./fonts/Aeonik/Aeonik-Medium.otf",
+      weight: "600",
+    },
+    {
+      path: "./fonts/Aeonik/Aeonik-Regular.otf",
+      weight: "500",
+    },
+    {
+      path: "./fonts/Aeonik/Aeonik-Thin.otf",
+      weight: "300",
+    },
+  ],
+});
+
+const polySans = localFont({
+  variable: "--polySans-font",
+  src: [
+    {
+      path: "./fonts/PolySansMedian/PolySansMedian.ttf",
+      weight: "700",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -25,9 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${polySans.variable} ${aeonik.variable} antialiased`}>
         {children}
       </body>
     </html>
